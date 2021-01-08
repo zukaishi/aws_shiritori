@@ -4,17 +4,14 @@ variable "bucket_name" {
 
 data "aws_iam_policy_document" "s3_bucket_policy" {
   statement {
-    sid       = ""
+    actions = ["s3:GetObject"]
     effect  = "Allow"
     principals {
-      type        = "*"
+      type        = "AWS"
       identifiers = ["*"]
     }
-    actions = ["s3:GetObject"]
-    resources = [
-      "arn:aws:s3:::${var.bucket_name}/",
-      "arn:aws:s3:::${var.bucket_name}//*"
-    ]
+    resources = ["arn:aws:s3:::${var.bucket_name}/*"]
+    sid       = "PublicReadGetObject"
   }
 }
 
