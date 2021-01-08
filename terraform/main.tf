@@ -1,30 +1,41 @@
 variable "bucket_name" {
-  default = "zukaishi.shiritori"
+  default = "website.shiritori.com"
 }
 
-data "aws_iam_policy_document" "s3_policy" {
+data "aws_iam_policy_document" "s3_bucket_policy" {
   statement {
-    actions = ["s3:GetObject"]
+    sid       = ""
     effect  = "Allow"
     principals {
-      type        = "AWS"
+      type        = "*"
       identifiers = ["*"]
     }
-    resources = ["arn:aws:s3:::${var.bucket_name}/*"]
-    sid       = "PublicReadGetObject"
+    actions = ["s3:GetObject"]
+    resources = [
+      "arn:aws:s3:::${var.bucket_name}/",
+      "arn:aws:s3:::${var.bucket_name}//*"
+    ]
   }
 }
 
-resource "aws_s3_bucket" "b" {
+resource "aws_s3_bucket" "website_shiritori_com" {
   bucket = var.bucket_name
-  acl    = "private"
-  policy = data.aws_iam_policy_document.s3_policy.json
+  policy = data.aws_iam_policy_document.s3_bucket_policy.json
+ 
   website {
     index_document = "index.html"
     error_document = "error.html"
   }
 }
 
+resource "aws_s3_bucket_public_access_block" "website_shiritori" {
+  bucket                  = var.bucket_name
+  block_public_acls       = true
+  block_public_policy     = false
+  ignore_public_acls      = true
+  restrict_public_buckets = false
+}
+
 output "url" {
-  value = aws_s3_bucket.b.website_endpoint
+  value = aws_s3_bucket.website_shiritori_com.website_endpoint
 }
