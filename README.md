@@ -1,5 +1,10 @@
 # aws_shiritori
 
-# logo
-https://hatchful.shopify.com/ja/
-<br>
+# s3 bucket create
+```
+cd terraform
+terraform init 
+terraform apply
+```
+
+# s3 fileupdate
