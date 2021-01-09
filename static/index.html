@@ -9,10 +9,48 @@
     <meta name="keywords" content="shiritori">
     <link rel="stylesheet" href="css/style.css">
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 </head>
 <body>
     <img src="images/logo.png" alt="shiritori">
+
     <div id="app">
+        <form id="app" @submit="checkForm"  method="post">
+      
+        <p v-if="errors.length">
+          <b>Please correct the following error(s):</b>
+          <ul>
+            <li v-for="error in errors">{{ error }}</li>
+            <li v-if="result">{{ result }}</li>
+          </ul>
+        </p>
+      
+        <p>
+          <label for="name1">Name1</label>
+          <input
+            id="name1"
+            v-model="name1"
+            type="text"
+            name="name1"
+          >
+        </p>
+      
+        <p>
+            <label for="name2">Name2</label>
+            <input
+              id="name2"
+              v-model="name2"
+              type="text"
+              name="name2"
+            >
+        </p>
+      
+        <p>
+          <input
+            type="submit"
+            value="Submit">
+        </p>
+      </form>
         {{ message }}
     </div>
     <script src="js/index.js"></script>
