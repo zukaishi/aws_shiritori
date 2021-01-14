@@ -1,7 +1,6 @@
 var app = new Vue({ 
     el: '#app',
     data: {
-        message: 'Hello Vue!',
         errors: [],
         name1: null,
         name2: null,
@@ -9,24 +8,22 @@ var app = new Vue({
     },
     methods:{
       checkForm: function (e) {
-        if (this.name1 && this.name2) {
-          return true;
-        }
         this.errors = [];
-  
         if (!this.name1) {
           this.errors.push('Name1 required.');
         }
         if (!this.name2) {
           this.errors.push('Name2 required.');
         }
-  
+
         e.preventDefault();
+        if (this.name1 && this.name2) {
+          axios
+          .get('https://jiehmlfyck.execute-api.ap-northeast-1.amazonaws.com/default/api-test')
+          .then(response => (this.result = response))
+          }
       }
     },
     mounted () {
-      axios
-        .get('https://api.coindesk.com/v1/bpi/currentprice.json')
-        .then(response => (this.result = response))
     }
 });
