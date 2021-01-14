@@ -25,5 +25,6 @@ var app = new Vue({
         }
     },
     mounted () {
+   //   this.errors = "aaaaa"
     }
 });

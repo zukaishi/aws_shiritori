@@ -29,73 +29,72 @@
     Author: TemplateMag.com
     License: https://templatemag.com/license/
   ======================================================= -->
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 </head>
 
 <body data-spy="scroll" data-offset="80" data-target="#thenavbar">
+  <div id="app">
 
-  <div id="hello">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-8 col-lg-offset-2 centered">
-          <h1>pokemon shiritori</h1>
-        </div>
+    <div id="hello">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 centered">
+            <h1>pokemon shiritori</h1>
+          </div>
 
-          <!-- /social -->
-          <div class="container">
-            <div class="row">
-              <div class="col-md-8 col-md-offset-2">
-                <form class="contact-form php-mail-form" role="form" action="contactform/contactform.php" method="POST">
+            <!-- /social -->
+            <div class="container">
+              <div class="row">
+                <div class="col-md-8 col-md-offset-2">
+                  <form class="contact-form" id="app" @submit="checkForm"  method="post">
 
-                  <div class="form-group">
-                    <input name="name1" class="form-control" id="name1" placeholder="一匹目のポケモンの名前" data-rule="minlen:2" data-msg="Please enter at least 2 chars" >
-                    <div class="validate"></div>
-                  </div>
-                  <div class="form-group">
-                    <input  name="name2" class="form-control" id="name2" placeholder="二匹目のポケモンの名前" data-rule="minlen:2" data-msg="Please enter at least 2 chars">
-                    <div class="validate"></div>
-                  </div>
+                    <div class="form-group">
+                      <input v-model="name1" name="name1" class="form-control" id="name1" placeholder="一匹目のポケモンの名前" data-msg="Please enter at least 2 chars" >
+                      <div class="validate"></div>
+                    </div>
+                    <div class="form-group">
+                      <input  v-model="name2" name="name2" class="form-control" id="name2" placeholder="二匹目のポケモンの名前"  data-msg="Please enter at least 2 chars">
+                      <div class="validate"></div>
+                    </div>
 
-
-                  <div class="loading"></div>
-                  <div class="error-message"></div>
-                  <div class="sent-message">Your message has been sent. Thank you!</div>
-
-                  <div class="form-send">
-                    <button type="submit" class="btn btn-large">実行</button>
-                  </div>
-
-                </form>
+                    <ul>
+                      <li v-for="error in errors">
+                        <div class="error-message">{{ error }}</div>
+                      </li>
+                    </ul>
+                    <div class="form-send">
+                      <button type="submit" class="btn btn-large">実行</button>
+                    </div>
+                  </form>
+                </div>
               </div>
             </div>
+        </div>
+        <!-- /row -->
+      </div>
+      <!-- /container -->
+    </div>
+    <!-- /hello -->
+
+
+    <div id="green">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-5 centered">
+            <img src="img/iphone.png" alt="">
           </div>
-      </div>
-      <!-- /row -->
-    </div>
-    <!-- /container -->
-  </div>
-  <!-- /hello -->
 
-  <div id="green">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-5 centered">
-          <img src="img/iphone.png" alt="">
-        </div>
-
-        <div class="col-lg-7 centered">
-          <h3>ここに結果が出るよ</h3>
-          <p>
-            aaaa<br>
-            aaaa<br>
-            aaaa<br>
-            aaaa<br>
-            aaaa<br>
-            aaaa<br>
-          </p>
+          <div class="col-lg-7 centered">
+            <h3>ここに結果が出るよ</h3>
+            <p>
+              <li v-if="result">{{ result }}</li>
+            </p>
+          </div>
         </div>
       </div>
     </div>
-  </div>
+</div>
 
   <div id="copyrights">
     <div class="container">
