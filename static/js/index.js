@@ -8,6 +8,7 @@ var app = new Vue({
     },
     methods:{
       checkForm: function (e) {
+        e.preventDefault();
         this.errors = [];
         if (!this.name1) {
           this.errors.push('Name1 required.');
@@ -16,13 +17,12 @@ var app = new Vue({
           this.errors.push('Name2 required.');
         }
 
-        e.preventDefault();
         if (this.name1 && this.name2) {
           axios
           .get('https://jiehmlfyck.execute-api.ap-northeast-1.amazonaws.com/default/api-test')
           .then(response => (this.result = response))
           }
-      }
+        }
     },
     mounted () {
     }
