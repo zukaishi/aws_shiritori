@@ -10,21 +10,22 @@ var app = new Vue({
       checkForm: function (e) {
         e.preventDefault();
         this.errors = [];
+/*
         if (!this.name1) {
           this.errors.push('Name1 required.');
         }
         if (!this.name2) {
           this.errors.push('Name2 required.');
         }
+*/
 
-        if (this.name1 && this.name2) {
-          axios
-          .get('https://jiehmlfyck.execute-api.ap-northeast-1.amazonaws.com/default/api-test')
-          .then(response => (this.result = response))
-          }
+
         }
     },
     mounted () {
-   //   this.errors = "aaaaa"
+      axios.get('https://jiehmlfyck.execute-api.ap-northeast-1.amazonaws.com/default/api-test')
+        .then((response) => {
+          this.result = response.data;
+        })
     }
 });
