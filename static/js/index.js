@@ -25,7 +25,7 @@ var app = new Vue({
     mounted () {
       axios.get('https://jiehmlfyck.execute-api.ap-northeast-1.amazonaws.com/default/api-test')
         .then((response) => {
-          this.result = response.data;
+          this.result = response.data.body;
         })
     }
 });
