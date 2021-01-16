@@ -32,12 +32,10 @@ func main() {
 	// 2. pokemonList[1] -> "フシギダネ"　配列で「全体ポケモンリスト」へ格納する。
 	pokemonList := map[int]string{
 		7:   "ゼニガメ",
+		132: "メタモン",
 		276: "スバメ",
 		376: "メタグロス",
 	}
-	pokemonList[7] = "ゼニガメ"
-	pokemonList[276] = "スバメ"
-	pokemonList[376] = "メタグロス"
 
 	// 3. 入力された二匹のポケモンの名前が存在しているかチェック
 	name1 := "ゼニガメ"
