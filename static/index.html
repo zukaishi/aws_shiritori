@@ -59,11 +59,6 @@
                     <ul>
                       <li v-for="error in errors">{{ error }} </li>
                     </ul>
-                    <div class="col-lg-7 centered">
-                      <p>
-                        <li v-for="name in result">{{ name }}</li>
-                      </p>
-                    </div>
                     <div class="form-send">
                       <button type="submit" class="btn btn-large">実行</button>
                     </div>
@@ -85,14 +80,14 @@
 
           <div class="col-lg-7 centered">
             <h3>ここに結果が出るよ</h3>
-            <p>
-              <li v-if="result">{{ result }}</li>
-            </p>
+            <div class="col-lg-7 centered">
+              <p v-for="name in result">{{ name }}</p>
+            </div>
           </div>
         </div>
       </div>
     </div>
-</div>
+  </div>
 
   <div id="copyrights">
     <div class="container">
