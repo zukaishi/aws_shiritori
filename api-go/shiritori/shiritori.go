@@ -5,13 +5,13 @@ import (
 )
 
 func main() {
-	fmt.Printf("game start ¥n")
+	fmt.Printf("game start \n")
 
 	/*
 		flow & role
 			 1. データは 1,フギダネ¥n 2,フシギバナ　...とは言ってくる想定
-			 2. 入力された二匹のポケモンの名前が存在しているかチェック
-			 3. list[1] -> "フシギダネ"　配列で「全体ポケモンリスト」へ格納する。
+			 2. pokemonList[1] -> "フシギダネ"　配列で「全体ポケモンリスト」へ格納する。
+			 3. 入力された二匹のポケモンの名前が存在しているかチェック
 			 4. ループ開始
 			 5. 	対象ポケモンの最後の文字を取り出す
 			 6. 	最後の文字が伸ばし棒なら一つ前の文字を、次の最初の文字とする
@@ -29,11 +29,35 @@ func main() {
 
 	*/
 
-	word := "しりとり"
-	start(word)
+	// 2. pokemonList[1] -> "フシギダネ"　配列で「全体ポケモンリスト」へ格納する。
+	pokemonList := map[int]string{
+		7:   "ゼニガメ",
+		276: "スバメ",
+		376: "メタグロス",
+	}
+	pokemonList[7] = "ゼニガメ"
+	pokemonList[276] = "スバメ"
+	pokemonList[376] = "メタグロス"
+
+	// 3. 入力された二匹のポケモンの名前が存在しているかチェック
+	name1 := "ゼニガメ"
+	name2 := "スバメ"
+	if !contains(pokemonList, name1) {
+		fmt.Printf("end1 ¥n")
+	}
+	if !contains(pokemonList, name2) {
+		fmt.Printf("end2 ¥n")
+	}
+	fmt.Printf("check end! \n")
 }
 
-func start(word string) {
-	fmt.Printf("最初の文字: %s¥n", word)
-
+func contains(pokemonList map[int]string, name string) bool {
+	for i := range pokemonList {
+		fmt.Printf("%s == %s \n", pokemonList[i], name)
+		if pokemonList[i] == name {
+			fmt.Printf("check! \n")
+			return true
+		}
+	}
+	return false
 }
