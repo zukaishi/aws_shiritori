@@ -19,11 +19,11 @@ func main() {
 	name1 := "ゼニガメ"
 	name2 := "スバメ"
 
-	no1 := contains(pokemonList, name1)
+	no1 := contains(pokemonList, name1, 0)
 	if no1 == 0 {
 		fmt.Printf("end1 ¥n")
 	}
-	no2 := contains(pokemonList, name2)
+	no2 := contains(pokemonList, name2, 0)
 	if no2 == 0 {
 		fmt.Printf("end2 ¥n")
 	}
@@ -33,16 +33,24 @@ func main() {
 	word := ""
 	no := no1
 	for i, v := range pokemonList {
-		word = pokemonList[no]
+		if word == "" {
+			word = pokemonList[no]
+		}
 		delete(pokemonList, no)
 
-		fmt.Println(getRuneAt(word, len(word)/3-1))
+		// 対象文字の最後の文字を取得utf-8のため、/3している
+		lastString := getRuneAt(word, len(word)/3-1)
+
+		fmt.Println(lastString)
 
 		fmt.Println(i, v)
 	}
 }
 
-func contains(pokemonList map[int]string, name string) int {
+/*
+	mode : 0 完全一致,1 先頭文字,2 最後の文字
+*/
+func contains(pokemonList map[int]string, name string, mode int) int {
 	for i := range pokemonList {
 		// fmt.Printf("%s == %s \n", pokemonList[i], name)
 		if pokemonList[i] == name {
