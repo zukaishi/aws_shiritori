@@ -19,11 +19,11 @@ func main() {
 	name1 := "ゼニガメ"
 	name2 := "スバメ"
 
-	no1 := contains(pokemonList, name1, 0)
+	no1 := contains(pokemonList, name1)
 	if no1 == 0 {
 		fmt.Printf("end1 ¥n")
 	}
-	no2 := contains(pokemonList, name2, 0)
+	no2 := contains(pokemonList, name2)
 	if no2 == 0 {
 		fmt.Printf("end2 ¥n")
 	}
@@ -47,19 +47,24 @@ func main() {
 	}
 }
 
-/*
-	mode : 0 完全一致,1 先頭文字,2 最後の文字
-*/
-func contains(pokemonList map[int]string, name string, mode int) int {
+func contains(pokemonList map[int]string, name string) int {
 	for i := range pokemonList {
-		// fmt.Printf("%s == %s \n", pokemonList[i], name)
 		if pokemonList[i] == name {
-			// fmt.Printf("check! \n")
 			return i
 		}
 	}
 	return 0
 }
+
+// func containsList(pokemonList map[int]string, str string, mode int) [] {
+// 	let list = []
+// 	for i := range pokemonList {
+// 		if getRuneAt(pokemonList[i], 0) == str {
+// 			list := append(list, i)
+// 		}
+// 	}
+// 	return list
+// }
 
 func getRuneAt(s string, i int) string {
 	rs := []rune(s)
