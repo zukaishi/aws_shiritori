@@ -32,6 +32,10 @@ func main() {
 	// 4. ループ開始
 	word := ""
 	no := no1
+	resultList := map[int]string{
+		no1: name1,
+	}
+
 	for i, v := range pokemonList {
 		if word == "" {
 			word = pokemonList[no]
@@ -45,6 +49,15 @@ func main() {
 		fmt.Println(list)
 		fmt.Println(i, v)
 	}
+
+	fmt.Println("result")
+	result := ""
+	for i, v := range resultList {
+		result += v + ","
+		fmt.Println(i, v)
+	}
+	fmt.Println(result)
+	fmt.Println("end")
 }
 
 func contains(pokemonList map[int]string, name string) int {
