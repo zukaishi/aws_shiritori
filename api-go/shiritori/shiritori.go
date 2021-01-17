@@ -40,9 +40,9 @@ func main() {
 
 		// 対象文字の最後の文字を取得utf-8のため、/3している
 		lastString := getRuneAt(word, len(word)/3-1)
+		list := containsList(pokemonList, lastString)
 
-		fmt.Println(lastString)
-
+		fmt.Println(list)
 		fmt.Println(i, v)
 	}
 }
@@ -56,15 +56,15 @@ func contains(pokemonList map[int]string, name string) int {
 	return 0
 }
 
-// func containsList(pokemonList map[int]string, str string, mode int) [] {
-// 	let list = []
-// 	for i := range pokemonList {
-// 		if getRuneAt(pokemonList[i], 0) == str {
-// 			list := append(list, i)
-// 		}
-// 	}
-// 	return list
-// }
+func containsList(pokemonList map[int]string, str string) map[int]string {
+	list := map[int]string{}
+	for i := range pokemonList {
+		if getRuneAt(pokemonList[i], 0) == str {
+			list[i] = pokemonList[i]
+		}
+	}
+	return list
+}
 
 func getRuneAt(s string, i int) string {
 	rs := []rune(s)
