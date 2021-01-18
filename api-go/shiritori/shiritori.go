@@ -38,9 +38,8 @@ func main() {
 		no1: name1,
 	}
 
-	for i, v := range pokemonList {
-		fmt.Println(i, v)
-
+	for {
+		resultList[no] = pokemonList[no]
 		word = pokemonList[no]
 		delete(pokemonList, no)
 
@@ -59,8 +58,6 @@ func main() {
 		rand.Seed(time.Now().UnixNano())
 		randNo := rand.Intn(len(randMap))
 		no = randMap[randNo]
-		resultList[no] = pokemonList[no]
-		fmt.Println("no=", no)
 	}
 
 	fmt.Println("result")
