@@ -2,6 +2,8 @@ package main
 
 import (
 	"fmt"
+	"math/rand"
+	"time"
 )
 
 func main() {
@@ -37,17 +39,28 @@ func main() {
 	}
 
 	for i, v := range pokemonList {
-		if word == "" {
-			word = pokemonList[no]
-		}
+		fmt.Println(i, v)
+
+		word = pokemonList[no]
 		delete(pokemonList, no)
 
 		// 対象文字の最後の文字を取得utf-8のため、/3している
 		lastString := getRuneAt(word, len(word)/3-1)
 		list := containsList(pokemonList, lastString)
 
-		fmt.Println(list)
-		fmt.Println(i, v)
+		if len(list) == 0 {
+			break
+		}
+
+		randMap := []int{}
+		for key := range list {
+			randMap = append(randMap, key)
+		}
+		rand.Seed(time.Now().UnixNano())
+		randNo := rand.Intn(len(randMap))
+		no = randMap[randNo]
+		resultList[no] = pokemonList[no]
+		fmt.Println("no=", no)
 	}
 
 	fmt.Println("result")
