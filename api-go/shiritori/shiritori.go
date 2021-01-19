@@ -37,8 +37,9 @@ func main() {
 	resultList := map[int]string{
 		no1: name1,
 	}
-
+	result := ""
 	for {
+		result += pokemonList[no]
 		resultList[no] = pokemonList[no]
 		word = pokemonList[no]
 		delete(pokemonList, no)
@@ -50,6 +51,7 @@ func main() {
 		if len(list) == 0 {
 			break
 		}
+		result += ","
 
 		randMap := []int{}
 		for key := range list {
@@ -61,11 +63,6 @@ func main() {
 	}
 
 	fmt.Println("result")
-	result := ""
-	for i, v := range resultList {
-		result += v + ","
-		fmt.Println(i, v)
-	}
 	fmt.Println(result)
 	fmt.Println("end")
 }
