@@ -7,9 +7,9 @@ import (
 )
 
 func main() {
-	fmt.Printf("game start \n")
+	name1 := "ゼニガメ"
+	name2 := "スバメ"
 
-	// 2. pokemonList[1] -> "フシギダネ"　配列で「全体ポケモンリスト」へ格納する。
 	pokemonList := map[int]string{
 		7:   "ゼニガメ",
 		132: "メタモン",
@@ -17,38 +17,24 @@ func main() {
 		376: "メタグロス",
 	}
 
-	// 3. 入力された二匹のポケモンの名前が存在しているかチェック
-	name1 := "ゼニガメ"
-	name2 := "スバメ"
-
-	no1 := contains(pokemonList, name1)
-	if no1 == 0 {
-		fmt.Printf("end1 ¥n")
+	startNo := contains(pokemonList, name1)
+	endNo := contains(pokemonList, name2)
+	if startNo == 0 || endNo == 0 {
+		fmt.Printf("input name failed ¥n")
 	}
-	no2 := contains(pokemonList, name2)
-	if no2 == 0 {
-		fmt.Printf("end2 ¥n")
-	}
-	fmt.Printf("check complete \n")
 
-	// 4. ループ開始
 	word := ""
-	no := no1
-	resultList := map[int]string{
-		no1: name1,
-	}
+	no := startNo
 	result := ""
 	for {
 		result += pokemonList[no]
-		resultList[no] = pokemonList[no]
 		word = pokemonList[no]
 		delete(pokemonList, no)
 
 		// 対象文字の最後の文字を取得utf-8のため、/3している
 		lastString := getRuneAt(word, len(word)/3-1)
 		list := containsList(pokemonList, lastString)
-
-		if len(list) == 0 {
+		if len(list) == 0 || endNo == no {
 			break
 		}
 		result += ","
@@ -61,10 +47,7 @@ func main() {
 		randNo := rand.Intn(len(randMap))
 		no = randMap[randNo]
 	}
-
-	fmt.Println("result")
 	fmt.Println(result)
-	fmt.Println("end")
 }
 
 func contains(pokemonList map[int]string, name string) int {
