@@ -1,20 +1,47 @@
 package main
 
 import (
+	"encoding/csv"
 	"fmt"
+	"io"
+	"log"
 	"math/rand"
+	"net/http"
+	"strconv"
 	"time"
 )
 
 func main() {
+	list := shiritori()
+	fmt.Println(list)
+}
+
+func shiritori() string {
 	name1 := "ゼニガメ"
 	name2 := "スバメ"
 
-	pokemonList := map[int]string{
-		7:   "ゼニガメ",
-		132: "メタモン",
-		276: "スバメ",
-		376: "メタグロス",
+	pokemonList := map[int]string{}
+	url := "https://s3-ap-northeast-1.amazonaws.com/website.shiritori.com/data/pokemon_list.csv"
+	resp, err := http.Get(url)
+	if err != nil {
+		fmt.Println(err)
+	}
+
+	defer resp.Body.Close()
+	reader := csv.NewReader(resp.Body)
+	for {
+		// 1行づつ読み込む
+		record, err := reader.Read()
+		// ファイルの末尾で処理終了
+		if err == io.EOF {
+			break
+		}
+		if err != nil {
+			log.Fatal(err)
+		}
+		var i int
+		i, _ = strconv.Atoi(record[0])
+		pokemonList[i] = record[1]
 	}
 
 	startNo := contains(pokemonList, name1)
@@ -47,7 +74,7 @@ func main() {
 		randNo := rand.Intn(len(randMap))
 		no = randMap[randNo]
 	}
-	fmt.Println(result)
+	return result
 }
 
 func contains(pokemonList map[int]string, name string) int {
