@@ -12,14 +12,13 @@ import (
 )
 
 func main() {
-	list := shiritori()
+	name1 := "ゼニガメ"
+	name2 := "スバメ"
+	list := shiritori(name1, name2)
 	fmt.Println(list)
 }
 
-func shiritori() string {
-	name1 := "ゼニガメ"
-	name2 := "スバメ"
-
+func shiritori(name1 string, name2 string) string {
 	pokemonList := map[int]string{}
 	url := "https://s3-ap-northeast-1.amazonaws.com/website.shiritori.com/data/pokemon_list.csv"
 	resp, err := http.Get(url)
