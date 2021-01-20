@@ -8,6 +8,7 @@ import (
 	"math/rand"
 	"net/http"
 	"strconv"
+	"strings"
 	"time"
 )
 
@@ -57,8 +58,7 @@ func shiritori(name1 string, name2 string) string {
 		word = pokemonList[no]
 		delete(pokemonList, no)
 
-		// 対象文字の最後の文字を取得utf-8のため、/3している
-		lastString := getRuneAt(word, len(word)/3-1)
+		lastString := getLastString(word)
 		list := containsList(pokemonList, lastString)
 		if len(list) == 0 || endNo == no {
 			break
@@ -74,6 +74,21 @@ func shiritori(name1 string, name2 string) string {
 		no = randMap[randNo]
 	}
 	return result
+}
+
+func getLastString(word string) string {
+	// 対象文字の最後の文字を取得utf-8のため、/3している
+	lastString := getRuneAt(word, len(word)/3-1)
+
+	// 最後の文字が伸ばし棒の場合
+	if lastString == "ー" {
+		lastString = getRuneAt(word, len(word)/3-2)
+	}
+
+	// 特殊文字、捨て仮名を扱いやすい形へ変換する
+	r := strings.NewReplacer("♂", "ス", "♀", "ス", "ァ", "ア", "ィ", "イ", "ゥ", "ウ", "ェ", "エ", "ォ", "オ", "ュ", "ユ", "ャ", "ヤ", "ョ", "ヨ")
+	resStr := r.Replace(lastString)
+	return resStr
 }
 
 func contains(pokemonList map[int]string, name string) int {
