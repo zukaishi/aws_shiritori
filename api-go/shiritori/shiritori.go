@@ -54,7 +54,7 @@ func shiritori(name1 string, name2 string) string {
 	no := startNo
 	result := ""
 	for {
-		result += pokemonList[no]
+		result += fmt.Sprintf("%d:%s", no, pokemonList[no])
 		word = pokemonList[no]
 		delete(pokemonList, no)
 
@@ -65,7 +65,7 @@ func shiritori(name1 string, name2 string) string {
 		}
 		result += ","
 		if lastString == getRuneAt(name2, 0) {
-			result += name2
+			result += fmt.Sprintf("%d:%s", endNo, name2)
 			break
 		}
 
