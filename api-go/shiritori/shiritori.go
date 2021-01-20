@@ -13,14 +13,13 @@ import (
 )
 
 func main() {
-	name1 := "ゼニガメ"
-	name2 := "スバメ"
+	name1 := "ミュウ"
+	name2 := "ザシアン"
 	list := shiritori(name1, name2)
 	fmt.Println(list)
 }
 
 func shiritori(name1 string, name2 string) string {
-	pokemonList := map[int]string{}
 	url := "https://s3-ap-northeast-1.amazonaws.com/website.shiritori.com/data/pokemon_list.csv"
 	resp, err := http.Get(url)
 	if err != nil {
@@ -29,19 +28,20 @@ func shiritori(name1 string, name2 string) string {
 
 	defer resp.Body.Close()
 	reader := csv.NewReader(resp.Body)
+	pokemonList := map[int]string{}
 	for {
-		// 1行づつ読み込む
 		record, err := reader.Read()
-		// ファイルの末尾で処理終了
 		if err == io.EOF {
 			break
 		}
 		if err != nil {
 			log.Fatal(err)
 		}
-		var i int
-		i, _ = strconv.Atoi(record[0])
-		pokemonList[i] = record[1]
+		if name2 == record[1] || getLastString(record[1]) != "ン" {
+			var i int
+			i, _ = strconv.Atoi(record[0])
+			pokemonList[i] = record[1]
+		}
 	}
 
 	startNo := contains(pokemonList, name1)
@@ -64,6 +64,10 @@ func shiritori(name1 string, name2 string) string {
 			break
 		}
 		result += ","
+		if lastString == getRuneAt(name2, 0) {
+			result += name2
+			break
+		}
 
 		randMap := []int{}
 		for key := range list {
