@@ -7,7 +7,7 @@ var app = new Vue({
         name2: null
     },
     methods:{
-      checkForm: function (e) {
+      request: function (e) {
         e.preventDefault();
         this.errors = [];
         let results = []
@@ -29,6 +29,10 @@ var app = new Vue({
             })
           })
           this.result = results
+        },
+        clear: function() {
+          this.name1 = ""
+          this.name2 = ""
         }
     },
     mounted () {
