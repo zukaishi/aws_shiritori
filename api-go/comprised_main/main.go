@@ -8,12 +8,26 @@ import (
 	"net/http"
 	"strconv"
 	"strings"
+
+	"github.com/aws/aws-lambda-go/events"
+	"github.com/aws/aws-lambda-go/lambda"
 )
 
+func handler(request events.APIGatewayProxyRequest) (events.APIGatewayProxyResponse, error) {
+	name1 := request.QueryStringParameters["name1"]
+	list := comprised(name1)
+	return events.APIGatewayProxyResponse{
+		Body:       string(list),
+		StatusCode: 200,
+	}, nil
+}
+
 func main() {
-	word := "ドン"
-	list := comprised(word)
-	fmt.Println(list)
+	lambda.Start(handler)
+}
+
+type Response struct {
+	List string `json:"list"`
 }
 
 func comprised(word string) string {
