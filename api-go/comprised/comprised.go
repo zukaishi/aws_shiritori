@@ -11,7 +11,7 @@ import (
 )
 
 func main() {
-	word := "チョ"
+	word := "ドン"
 	list := kashiramoji(word)
 	fmt.Println(list)
 }
