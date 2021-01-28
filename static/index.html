@@ -57,12 +57,12 @@
                       <li v-for="error in errors">{{ error }} </li>
                     </ul>
 
-                    <form class="contact-form" id="app" @submit="request"  method="post">
+                    <form class="contact-form" action="/" id="app" @submit.prevent="request"  method="post">
                       <div class="form-send">
                         <button type="submit" class="btn btn-large">実行</button>                      
                       </div>
                     </form>
-                    <form class="contact-form" id="app" @submit="clear"  method="post">
+                    <form class="contact-form" action="/" id="app" @submit.prevent="clear"  method="post">
                       <div class="form-send">
                         <button type="submit" class="btn btn-large">クリア</button>                      
                       </div>
