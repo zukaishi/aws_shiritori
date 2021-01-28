@@ -1,11 +1,25 @@
+.app {
+  text-align: center;
+}
+
+.header-style {
+  background:#000;
+  color:#fff;
+  font-size:18pt;
+  width:95%;
+  border-top:13px dashed #fff;
+  border-bottom:13px dashed #fff;
+  box-shadow: 0 0 3px 8px #000;
+  text-shadow: 0 0 5px;
+  padding:20px;
+  margin-left:10px;
+}
+
 .line-bc {
   padding: 20px 10px;
-  max-width: 450px;
   margin: 15px auto;
-  text-align: right;
   font-size: 14px;
   background: #7da4cd;
-
 }
 
 /*以下、②左側のコメント*/
@@ -80,4 +94,48 @@
   border-left: 18px solid #30e852;
   -webkit-transform: rotate(-35deg);
   transform: rotate(-35deg);
+}
+.cp_iptxt {
+	position: relative;
+	width: 80%;
+	margin: 40px 3%;
+}
+.cp_iptxt input[type=text] {
+	font: 15px/24px sans-serif;
+	box-sizing: border-box;
+	width: 100%;
+	margin: 8px 0;
+	padding: 0.3em;
+	transition: 0.3s;
+	border: 1px solid #1b2538;
+	border-radius: 4px;
+	outline: none;
+}
+.cp_iptxt input[type=text]:focus {
+	border-color: #da3c41;
+}
+.cp_iptxt input[type=text] {
+	padding-left: 40px;
+}
+.cp_iptxt i {
+	position: absolute;
+	top: 8px;
+	left: 0;
+	padding: 9px 8px;
+	transition: 0.3s;
+	color: #aaaaaa;
+}
+.cp_iptxt input[type=text]:focus + i {
+	color: #da3c41;
+}
+.Button-style {
+  font-size: 18px;
+  display: inline-block;
+  padding: 0.5em 1em 0.3em;
+  color: #ffffff;
+  border-radius: 25px;
+  background-color: #0099ff;
+  border: none;
+  cursor: pointer;
+  margin-right: 20px;
 }

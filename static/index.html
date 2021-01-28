@@ -9,20 +9,26 @@
 </head>
 
 <body>
-  <div id="app">
-    <h3 style="background:#000;color:#fff;font-size:18pt;width:80%;border-top:13px dashed #fff;border-bottom:13px dashed #fff;box-shadow: 0 0 3px 8px #000;text-shadow: 0 0 5px;padding:20px;margin-left:10px;">pokemon shiritori</h3>
+  <div id="app" class="app">
+    <h3 class="header-style">pokemon shiritori</h3>
 
-    <input v-model="name1" name="name1" class="form-control" id="name1" placeholder="一匹目のポケモンの名前 or 含まれる文字">
-    <input  v-model="name2" name="name2" class="form-control" id="name2" placeholder="二匹目のポケモンの名前">
+    <div class="cp_iptxt">
+      <input type="text" v-model="name1"  id="name1"  placeholder="一匹目のポケモンの名前 or 含まれる文字">
+      <i class="fa fa-user fa-lg fa-fw" aria-hidden="true"></i>
+    </div>
+    <div class="cp_iptxt">
+      <input type="text" v-model="name2" id="name2"  placeholder="二匹目のポケモンの名前">
+      <i class="fa fa-envelope fa-lg fa-fw" aria-hidden="true"></i>
+    </div>
 
     <form class="contact-form" action="/" id="app" @submit.prevent="request"  method="post">
       <div class="form-send">
-        <button type="submit" class="btn btn-large">実行</button>                      
+        <button type="submit" class="Button-style">実行</button>                      
       </div>
     </form>
     <form class="contact-form" action="/" id="app" @submit.prevent="clear"  method="post">
       <div class="form-send">
-        <button type="submit" class="btn btn-large">クリア</button>                      
+        <button type="submit" class="Button-style">クリア</button>                      
       </div>
     </form>
     <div class="line-bc">
