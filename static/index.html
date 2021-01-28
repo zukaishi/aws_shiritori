@@ -2,119 +2,37 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Bolt - Bootstrap Agency Template</title>
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <meta content="" name="keywords">
-  <meta content="" name="description">
-
-  <!-- Favicons -->
-  <link href="img/p.ico" rel="icon">
-  <link href="img/apple-touch-icon.png" rel="apple-touch-icon">
-
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900|Raleway:400,300,700,900" rel="stylesheet">
-
-  <!-- Bootstrap CSS File -->
-  <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
-  <!-- Libraries CSS Files -->
-  <link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-
-  <!-- Main Stylesheet File -->
-  <link href="css/style.css" rel="stylesheet">
-
-  <!-- =======================================================
-    Template Name: Bolt
-    Template URL: https://templatemag.com/bolt-bootstrap-agency-template/
-    Author: TemplateMag.com
-    License: https://templatemag.com/license/
-  ======================================================= -->
+  <title>pokemon shiritori</title>
+  <link rel="stylesheet" href="css/style.css">
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 </head>
 
-<body data-spy="scroll" data-offset="80" data-target="#thenavbar">
+<body>
   <div id="app">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-8 col-lg-offset-2 centered">
-            <h1>pokemon shiritori</h1>
-          </div>
+    <h3 style="background:#000;color:#fff;font-size:18pt;width:80%;border-top:13px dashed #fff;border-bottom:13px dashed #fff;box-shadow: 0 0 3px 8px #000;text-shadow: 0 0 5px;padding:20px;margin-left:10px;">pokemon shiritori</h3>
 
-            <!-- /social -->
-            <div class="container">
-              <div class="row">
-                <div class="col-md-8 col-md-offset-2">
+    <input v-model="name1" name="name1" class="form-control" id="name1" placeholder="一匹目のポケモンの名前 or 含まれる文字">
+    <input  v-model="name2" name="name2" class="form-control" id="name2" placeholder="二匹目のポケモンの名前">
 
-                    <div class="form-group">
-                      <input v-model="name1" name="name1" class="form-control" id="name1" placeholder="一匹目のポケモンの名前 or 含まれる文字">
-                    </div>
-                    <div class="form-group">
-                      <input  v-model="name2" name="name2" class="form-control" id="name2" placeholder="二匹目のポケモンの名前">
-                    </div>
-
-                    <ul>
-                      <li v-for="error in errors">{{ error }} </li>
-                    </ul>
-
-                    <form class="contact-form" action="/" id="app" @submit.prevent="request"  method="post">
-                      <div class="form-send">
-                        <button type="submit" class="btn btn-large">実行</button>                      
-                      </div>
-                    </form>
-                    <form class="contact-form" action="/" id="app" @submit.prevent="clear"  method="post">
-                      <div class="form-send">
-                        <button type="submit" class="btn btn-large">クリア</button>                      
-                      </div>
-                    </form>
-                </div>
-              </div>
-            </div>
-        </div>
-        <!-- /row -->
+    <form class="contact-form" action="/" id="app" @submit.prevent="request"  method="post">
+      <div class="form-send">
+        <button type="submit" class="btn btn-large">実行</button>                      
       </div>
-      <!-- /container -->
-
-    <div id="green">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-5 centered">
-            <img src="img/iphone.png" alt="">
-          </div>
-
-          <div class="col-lg-7 centered">
-            <h3>ここに結果が出るよ</h3>
-            <div class="col-lg-7 centered">
-              <p v-for="name in result">{{ name }}</p>
-            </div>
-          </div>
-        </div>
+    </form>
+    <form class="contact-form" action="/" id="app" @submit.prevent="clear"  method="post">
+      <div class="form-send">
+        <button type="submit" class="btn btn-large">クリア</button>                      
+      </div>
+    </form>
+    <div class="line-bc">
+      ここに結果が出るよ
+      <div  v-for="(name,count) in result" >
+        <div v-if="count % 2==0" class="balloon6"><div class="chatting"><div class="says"><p>{{ name }}</p></div></div></div>
+        <div v-if="count % 2==1" class="mycomment"><p>{{ name }}</p></div>
       </div>
     </div>
   </div>
-
-  <div id="copyrights">
-    <div class="container">
-      <p>
-        &copy; Copyrights <strong>Bolt</strong>. All Rights Reserved
-      </p>
-      <div class="credits">
-        <!--
-          You are NOT allowed to delete the credit link to TemplateMag with free version.
-          You can delete the credit link only if you bought the pro version.
-          Buy the pro version with working PHP/AJAX contact form: https://templatemag.com/bolt-bootstrap-agency-template/
-          Licensing information: https://templatemag.com/license/
-        -->
-        Created with Bolt template by <a href="https://templatemag.com/">TemplateMag</a>
-      </div>
-    </div>
-  </div>
-  <script src="lib/jquery/jquery.min.js"></script>
-  <script src="lib/bootstrap/js/bootstrap.min.js"></script>
-  <script src="lib/php-mail-form/validate.js"></script>
-  <script src="lib/easing/easing.min.js"></script>
-  <script src="lib/chart/chart.js"></script>
   <script src="js/index.js"></script>
-  <script src="js/main.js"></script>
 </body>
 </html>
