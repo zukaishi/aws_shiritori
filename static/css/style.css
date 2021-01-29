@@ -71,6 +71,7 @@
 /*以下、③右側の緑コメント*/
 .mycomment {
   margin: 10px 0;
+  text-align: right;
 }
 .mycomment p {
   display: inline-block;
