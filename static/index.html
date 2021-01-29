@@ -22,16 +22,10 @@
       <i class="fa fa-envelope fa-lg fa-fw" aria-hidden="true"></i>
     </div>
 
-    <form class="contact-form" action="/" id="app" @submit.prevent="request"  method="post">
-      <div class="form-send">
-        <button type="submit" class="Button-style">実行</button>                      
-      </div>
-    </form>
-    <form class="contact-form" action="/" id="app" @submit.prevent="clear"  method="post">
-      <div class="form-send">
-        <button type="submit" class="Button-style">クリア</button>                      
-      </div>
-    </form>
+    <div class="form-send">
+      <button type="submit" class="Button-style"  v-on:click="request">実行</button>                      
+      <button type="submit" class="Button-style"  v-on:click="clear">クリア</button>                      
+    </div>
 
     <div class="line-bc">
       ここに結果が出るよ
