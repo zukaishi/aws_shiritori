@@ -1,3 +1,4 @@
+
 .app {
   text-align: center;
 }
@@ -6,14 +7,11 @@
   background:#000;
   color:#fff;
   font-size:18pt;
-  width:95%;
   border-top:13px dashed #fff;
   border-bottom:13px dashed #fff;
   box-shadow: 0 0 3px 8px #000;
   text-shadow: 0 0 5px;
-  padding:20px;
-  margin-left:10px;
-}
+ }
 
 .line-bc {
   padding: 20px 10px;
