@@ -14,21 +14,21 @@
     <h3 class="header-style">pokemon shiritori</h3>
 
     <div class="cp_iptxt">
-      <input type="text" v-model="name1"  id="name1"  placeholder="一匹目のポケモンの名前 or 含まれる文字">
+      <input type="text" v-model="name1"  id="name1"  placeholder="さいしょのポケモン か なにかもじ　を　いれてね">
       <i class="fa fa-user fa-lg fa-fw" aria-hidden="true"></i>
     </div>
     <div class="cp_iptxt">
-      <input type="text" v-model="name2" id="name2"  placeholder="二匹目のポケモンの名前">
+      <input type="text" v-model="name2" id="name2"  placeholder="さいごのポケモン　を　いれてね">
       <i class="fa fa-envelope fa-lg fa-fw" aria-hidden="true"></i>
     </div>
 
     <div class="form-send">
-      <button type="submit" class="Button-style"  v-on:click="request">実行</button>                      
-      <button type="submit" class="Button-style"  v-on:click="clear">クリア</button>                      
+      <button type="submit" class="Button-style"  v-on:click="request">じっこう</button>                      
+      <button type="submit" class="Button-style"  v-on:click="clear">やりなおし</button>                      
     </div>
 
     <div class="line-bc">
-      ここに結果が出るよ
+      <h1 v-if="result">ここにけっかが出るよ</h1>
       <div  v-for="(name,count) in result" >
         <div v-if="count % 2==0" class="balloon6"><div class="chatting"><div class="says"><p>{{ name }}</p></div></div></div>
         <div v-if="count % 2==1" class="mycomment"><p>{{ name }}</p></div>
