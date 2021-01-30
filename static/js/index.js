@@ -14,7 +14,13 @@ var app = new Vue({
 
         if (!this.name1) {
           this.errors.push('Name1 required.');
+        } else {
+          this.name1 = this.hiraToKana(this.name1)
         }
+        if(this.name2) {
+          this.name2 = this.hiraToKana(this.name2)
+        }
+
         let url =""
         if (!this.name2) {
           url = "https://2wb8kl0nf6.execute-api.ap-northeast-1.amazonaws.com/default/comprised" + "?name1=" + this.name1 
@@ -24,18 +30,29 @@ var app = new Vue({
 
         axios.get(url)
           .then((response) => {
-            str = response.data.body.split(",");
+            let body = this.kanaToHira(response.data.body)
+            str = body.split(",");
             str.forEach(function(str){
               results.push(str);
             })
           })
-          this.result = results
-        },
+        this.result = results
+      },
       clear: function() {
         this.name1 = ""
         this.name2 = ""
+      },
+      kanaToHira: function(str) {
+        return str.replace(/[\u30a1-\u30f6]/g, function(match) {
+            var chr = match.charCodeAt(0) - 0x60;
+            return String.fromCharCode(chr);
+        });
+      },
+      hiraToKana: function(str) {
+        return str.replace(/[\u3041-\u3096]/g, function(match) {
+            var chr = match.charCodeAt(0) + 0x60;
+            return String.fromCharCode(chr);
+        });
       }
-    },
-    mounted () {
     }
 });
