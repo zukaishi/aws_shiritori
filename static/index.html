@@ -14,11 +14,13 @@
     <h3 class="header-style">pokemon shiritori</h3>
 
     <div class="cp_iptxt">
-      <input type="text" v-model="name1"  id="name1"  placeholder="さいしょのポケモン か なにかもじ　を　いれてね">
+      さいしょのポケモンか、<br>どこかにはいるもじをいれる
+      <input type="text" v-model="name1"  id="name1"  placeholder="">
       <i class="fa fa-user fa-lg fa-fw" aria-hidden="true"></i>
     </div>
     <div class="cp_iptxt">
-      <input type="text" v-model="name2" id="name2"  placeholder="さいごのポケモン　を　いれてね">
+      さいごのポケモンをいれる
+      <input type="text" v-model="name2" id="name2"  placeholder="">
       <i class="fa fa-envelope fa-lg fa-fw" aria-hidden="true"></i>
     </div>
 
@@ -28,7 +30,7 @@
     </div>
 
     <div class="line-bc">
-      <h1 v-if="result">ここにけっか　が　でるよ</h1>
+      <h1 v-if="result">しりとりけっか</h1>
       <div  v-for="(name,count) in result" >
         <div v-if="count % 2==0" class="balloon6"><div class="chatting"><div class="says"><p>{{ name }}</p></div></div></div>
         <div v-if="count % 2==1" class="mycomment"><p>{{ name }}</p></div>
