@@ -5,7 +5,7 @@ var app = new Vue({
         result: [],
         name1: null,
         name2: null,
-        mode:1 // 1 しりとり,2 どこかに文字列,3 最初に文字列,4 最後に文字列
+        mode:0 // 0 しりとり,1 どこかに文字列,2 最初に文字列,3 最後に文字列
     },
     methods:{
       request: function (e) {
