@@ -13,6 +13,19 @@
   <div id="app" class="app">
     <h3 class="header-style">pokemon shiritori</h3>
 
+    <div class="cp_ipselect">
+      <select class="cp_sl06" required>
+        <option value="" hidden disabled selected></option>
+        <option value="1">ふつうにしりとり</option>
+        <option value="2">どこかにもじがはいるぽけもん</option>
+        <option value="3">にゅうりょくもじからはじまるポケモン</option>
+        <option value="4">にゅうりょくもじでおわるポケモン</option>
+      </select>
+      <span class="cp_sl06_highlight"></span>
+      <span class="cp_sl06_selectbar"></span>
+      <label class="cp_sl06_selectlabel">しりとりもーどをえらぶ</label>
+    </div>
+
     <div class="cp_iptxt">
       さいしょのポケモンか、<br>どこかにはいるもじをいれる
       <input type="text" v-model="name1"  id="name1"  placeholder="">
