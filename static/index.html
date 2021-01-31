@@ -14,9 +14,8 @@
     <h3 class="header-style">pokemon shiritori</h3>
 
     <div class="cp_ipselect">
-      <select class="cp_sl06" required>
-        <option value="" hidden disabled selected></option>
-        <option value="1">ふつうにしりとり</option>
+      <select class="cp_sl06" required v-model="mode">
+        <option value="1" selected>ふつうにしりとり</option>
         <option value="2">どこかにもじがはいるぽけもん</option>
         <option value="3">にゅうりょくもじからはじまるポケモン</option>
         <option value="4">にゅうりょくもじでおわるポケモン</option>

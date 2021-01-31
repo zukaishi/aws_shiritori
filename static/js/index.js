@@ -4,7 +4,8 @@ var app = new Vue({
         errors: [],
         result: [],
         name1: null,
-        name2: null
+        name2: null,
+        mode:1
     },
     methods:{
       request: function (e) {
@@ -23,7 +24,7 @@ var app = new Vue({
 
         let url =""
         if (!this.name2) {
-          url = "https://2wb8kl0nf6.execute-api.ap-northeast-1.amazonaws.com/default/comprised" + "?name1=" + this.name1 
+          url = "https://2wb8kl0nf6.execute-api.ap-northeast-1.amazonaws.com/default/comprised" + "?name1=" + this.name1 +"&mode=" + this.mode
         } else {
           url = "https://jiehmlfyck.execute-api.ap-northeast-1.amazonaws.com/default/api-test" + "?name1=" + this.name1 + "&name2=" + this.name2 
         }
