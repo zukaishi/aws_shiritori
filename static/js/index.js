@@ -11,7 +11,6 @@ var app = new Vue({
       request: function (e) {
         e.preventDefault();
         this.errors = [];
-        let results = []
 
         if (!this.name1) {
           this.errors.push('Name1 required.');
@@ -24,11 +23,13 @@ var app = new Vue({
 
         let url =""
         if (!this.name2) {
-          url = "https://2wb8kl0nf6.execute-api.ap-northeast-1.amazonaws.com/default/comprised" + "?name1=" + this.name1 +"&mode=" + this.mode
+          url = "https://2wb8kl0nf6.execute-api.ap-northeast-1.amazonaws.com/default/comprised" + "?name1=" + this.name1
         } else {
           url = "https://jiehmlfyck.execute-api.ap-northeast-1.amazonaws.com/default/api-test" + "?name1=" + this.name1 + "&name2=" + this.name2 
         }
 
+        let mode = this.mode 
+        let results = []
         axios.get(url)
           .then((response) => {
             let body = this.kanaToHira(response.data.body)
