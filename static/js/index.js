@@ -63,8 +63,9 @@ var app = new Vue({
         this.result = results
       },
       clear: function() {
-        this.name1 = ""
-        this.name2 = ""
+        this.name1 = null
+        this.name2 = null
+        this.mode  = 0
       },
       kanaToHira: function(str) {
         return str.replace(/[\u30a1-\u30f6]/g, function(match) {
