@@ -8,11 +8,18 @@ var app = new Vue({
         mode:0 // 0 しりとり,1 どこかに文字列,2 最初に文字列,3 最後に文字列
     },
     methods:{
+      change: function () {
+        if ( this.mode  > 0 ) {
+          this.name2 = null
+        }
+      },
       request: function (e) {
         e.preventDefault();
         this.errors = [];
         let name1 = this.name1
         let name2 = this.name2
+        let mode = this.mode 
+        let results = []
 
         if (!this.name1) {
           this.errors.push('Name1 required.');
@@ -30,8 +37,6 @@ var app = new Vue({
           url = "https://jiehmlfyck.execute-api.ap-northeast-1.amazonaws.com/default/api-test" + "?name1=" + name1+ "&name2=" + name2
         }
 
-        let mode = this.mode 
-        let results = []
         axios.get(url)
           .then((response) => {
             let body = response.data.body.split(",");

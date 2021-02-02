@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <title>pokemon shiritori</title>
-  <link rel="stylesheet" href="css/style.css?date=20210129">
+  <link rel="stylesheet" href="css/style.css?date=20210202">
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -14,7 +14,7 @@
     <h3 class="header-style">pokemon shiritori</h3>
 
     <div class="cp_ipselect">
-      <select class="cp_sl06" required v-model="mode">
+      <select class="cp_sl06" required v-model="mode" v-on:change="change">
         <option value="0" selected>ふつうにしりとり</option>
         <option value="1">どこかにもじがはいるぽけもん</option>
         <option value="2">にゅうりょくもじからはじまるポケモン</option>
@@ -32,7 +32,7 @@
     </div>
     <div class="cp_iptxt">
       さいごのポケモンをいれる
-      <input type="text" v-model="name2" id="name2"  placeholder="">
+      <input type="text" v-model="name2" id="name2" >
       <i class="fa fa-envelope fa-lg fa-fw" aria-hidden="true"></i>
     </div>
 
