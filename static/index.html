@@ -16,7 +16,7 @@
     <div class="cp_ipselect">
       <select class="cp_sl06" required v-model="mode" v-on:change="change">
         <option value="0" selected>ふつうにしりとり</option>
-        <option value="1">どこかにもじがはいるぽけもん</option>
+        <option value="1">どこかにもじがはいるポケモン</option>
         <option value="2">にゅうりょくもじからはじまるポケモン</option>
         <option value="3">にゅうりょくもじでおわるポケモン</option>
       </select>
@@ -26,12 +26,13 @@
     </div>
 
     <div class="cp_iptxt">
-      さいしょのポケモンか、<br>どこかにはいるもじをいれる
+      <p v-if="mode == 0 ">さいしょのポケモンをいれる</p>
+      <p v-if="mode != 0 ">もじにゅうりょく</p>
       <input type="text" v-model="name1"  id="name1"  placeholder="">
       <i class="fa fa-user fa-lg fa-fw" aria-hidden="true"></i>
     </div>
-    <div class="cp_iptxt">
-      さいごのポケモンをいれる
+    <div class="cp_iptxt" v-if="mode == 0">
+      <p>さいごのポケモンをいれる</p>
       <input type="text" v-model="name2" id="name2" >
       <i class="fa fa-envelope fa-lg fa-fw" aria-hidden="true"></i>
     </div>
