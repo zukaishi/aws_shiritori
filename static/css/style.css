@@ -94,6 +94,17 @@
   -webkit-transform: rotate(-35deg);
   transform: rotate(-35deg);
 }
+
+.mycomment .faceicon {
+  float: right;
+  width: 40px;
+}
+
+.mycomment .faceicon img{
+  width: 100%;
+  height: auto;
+  border-radius: 50%;
+}
 .cp_iptxt {
 	position: relative;
 	width: 80%;

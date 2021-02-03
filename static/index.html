@@ -46,7 +46,7 @@
       <h1 v-if="result">しりとりけっか</h1>
       <div  v-for="(name,count) in result" >
         <div v-if="count % 2==0" class="balloon6"><div class="chatting"><div class="faceicon"><img src="./img/icon_left.png"></div><div class="says"><p>{{ name }}</p></div></div></div>
-        <div v-if="count % 2==1" class="mycomment"><p>{{ name }}</p><div class="faceicon"><img src="./img/icon_left.png"></div></div>
+        <div v-if="count % 2==1" class="mycomment"><p>{{ name }}</p><div class="faceicon"><img src="./img/icon_right.png"></div></div>
       </div>
     </div>
   </div>
