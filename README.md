@@ -1,4 +1,4 @@
-![Untitled Diagram](https://user-images.githubusercontent.com/22611735/117084473-40d53380-ad82-11eb-83e3-bfe9b8c20132.png)
+![Untitled Diagram (2)](https://user-images.githubusercontent.com/22611735/117084518-5e0a0200-ad82-11eb-8f69-ea2db8fe700f.png)
 
 
 # aws_shiritori
