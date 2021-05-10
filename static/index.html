@@ -50,6 +50,15 @@
       </div>
     </div>
   </div>
-  <script src="js/index.js"></script>
+  <script>
+    SpeechRecognition = webkitSpeechRecognition || SpeechRecognition;
+    const recognition = new SpeechRecognition();
+  
+    recognition.onresult = (event) => {
+      alert(event.results[0][0].transcript);
+    }
+  
+    recognition.start();
+  </script>
 </body>
 </html>
