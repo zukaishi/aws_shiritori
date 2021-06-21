@@ -2,7 +2,7 @@
 ![Untitled Diagram (2)](https://user-images.githubusercontent.com/22611735/117084518-5e0a0200-ad82-11eb-8f69-ea2db8fe700f.png)
 
 # aws_shiritori
-https://s3-ap-northeast-1.amazonaws.com/website.shiritori.com/index.html
+http://aws-shiritori.tk/
 
 # イメージ
 <img width="492" alt="スクリーンショット 2021-06-17 9 56 46" src="https://user-images.githubusercontent.com/22611735/122314101-7c067d00-cf52-11eb-872a-c20319e53cb7.png">
