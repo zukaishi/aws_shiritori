@@ -19,3 +19,5 @@ https://s3-ap-northeast-1.amazonaws.com/website.shiritori.com/index.html
 - 
 # バケット作り直しドメインアクセス可能になった
 - http://aws-shiritori.tk/
+<img width="1071" alt="スクリーンショット 2021-06-22 8 28 22" src="https://user-images.githubusercontent.com/22611735/122839854-d4af8e80-d333-11eb-8382-dbc8b57b7a53.png">
+A レコード設定忘れてたので対応
