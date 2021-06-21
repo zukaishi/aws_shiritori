@@ -7,3 +7,7 @@ https://s3-ap-northeast-1.amazonaws.com/website.shiritori.com/index.html
 # イメージ
 <img width="492" alt="スクリーンショット 2021-06-17 9 56 46" src="https://user-images.githubusercontent.com/22611735/122314101-7c067d00-cf52-11eb-872a-c20319e53cb7.png">
 <img width="486" alt="スクリーンショット 2021-06-17 9 56 40" src="https://user-images.githubusercontent.com/22611735/122314071-6ee98e00-cf52-11eb-93df-2258ec30b651.png">
+
+# ドメイン
+aws-shiritori.tk　
+取得完了 2021/6/21 
