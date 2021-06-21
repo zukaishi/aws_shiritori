@@ -15,4 +15,5 @@ https://s3-ap-northeast-1.amazonaws.com/website.shiritori.com/index.html
 # route53 回り参考
 - https://blog.serverworks.co.jp/delegate-route53
 - route53 ホストゾーン作成
+- ドメインの管理者をfreenomから、route53のNSレコードに記載されたDNSサーバに変更
 - 
