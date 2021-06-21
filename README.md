@@ -17,3 +17,5 @@ https://s3-ap-northeast-1.amazonaws.com/website.shiritori.com/index.html
 - route53 ホストゾーン作成
 - ドメインの管理者をfreenomから、route53のNSレコードに記載されたDNSサーバに変更
 - 
+# バケット作り直しドメインアクセス可能になった
+- http://aws-shiritori.tk/
