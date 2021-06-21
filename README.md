@@ -9,5 +9,10 @@ https://s3-ap-northeast-1.amazonaws.com/website.shiritori.com/index.html
 <img width="486" alt="スクリーンショット 2021-06-17 9 56 40" src="https://user-images.githubusercontent.com/22611735/122314071-6ee98e00-cf52-11eb-93df-2258ec30b651.png">
 
 # ドメイン
-aws-shiritori.tk　
-取得完了 2021/6/21 
+- aws-shiritori.tk　
+- 取得完了 2021/6/21 
+
+# route53 回り参考
+- https://blog.serverworks.co.jp/delegate-route53
+- route53 ホストゾーン作成
+- 
