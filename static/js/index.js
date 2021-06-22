@@ -40,7 +40,6 @@ var app = new Vue({
         axios.get(url)
           .then((response) => {
             let body = response.data.body.split(",");
-            // https://ja.stackoverflow.com/questions/72150/vue%E3%81%AEforeach%E3%81%AE%E4%B8%AD%E3%81%A7%E3%83%A1%E3%82%BD%E3%83%83%E3%83%89%E3%81%8C%E5%91%BC%E3%81%B9%E3%81%AA%E3%81%84
             body.forEach((value) => {
               if( value ) {
 
