@@ -34,7 +34,7 @@ type Response struct {
 }
 
 func shiritori(name1 string, name2 string) string {
-	url := "https://s3-ap-northeast-1.amazonaws.com/website.shiritori.com/data/pokemon_list.csv"
+	url := "http://aws-shiritori.tk/data/pokemon_list.csv"
 	resp, err := http.Get(url)
 	if err != nil {
 		fmt.Println(err)

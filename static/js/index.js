@@ -34,7 +34,7 @@ var app = new Vue({
         if (!this.name2) {
           url = "https://2wb8kl0nf6.execute-api.ap-northeast-1.amazonaws.com/default/comprised" + "?name1=" + name1
         } else {
-          url = "https://jiehmlfyck.execute-api.ap-northeast-1.amazonaws.com/default/api-test" + "?name1=" + name1+ "&name2=" + name2
+          url = "https://um1ozd2k76.execute-api.ap-northeast-1.amazonaws.com/default/shiritori" + "?name1=" + name1+ "&name2=" + name2
         }
 
         axios.get(url)
