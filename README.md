@@ -23,7 +23,6 @@ http://aws-shiritori.tk/
 A レコード設定忘れてたので対応
 
 
-# http://www.aws-shiritori.tk/ へアクセスされた場合 http://aws-shiritori.tk/ へリダイレクトさせる
-
+# www リダイレクト対応
 - Route53でS3に作成したBucket(www.aws-shiritori.tk)のレコードを追加Aレコードでにaliasとして作成したBucket(www.aws-shiritori.tk)を選択
 - s3 Bucket(www.aws-shiritori.tk) 、プロパティ、静的ウェブサイトホスティング、オブジェクトのリクエストをリダイレクトするチェック、プロトコル - オプション　
