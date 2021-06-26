@@ -21,3 +21,7 @@ http://aws-shiritori.tk/
 - http://aws-shiritori.tk/
 <img width="1071" alt="スクリーンショット 2021-06-22 8 28 22" src="https://user-images.githubusercontent.com/22611735/122839854-d4af8e80-d333-11eb-8382-dbc8b57b7a53.png">
 A レコード設定忘れてたので対応
+
+# http://www.aws-shiritori.tk/ へアクセスされた場合 http://aws-shiritori.tk/ へリダイレクトさせる
+- Route53でS3に作成したBucket(www.aws-shiritori.tk)のレコードを追加Aレコードでにaliasとして作成したBucket(www.aws-shiritori.tk)を選択
+- s3 Bucket(www.aws-shiritori.tk) 、プロパティ、静的ウェブサイトホスティング、オブジェクトのリクエストをリダイレクトするチェック、プロトコル - オプション　
