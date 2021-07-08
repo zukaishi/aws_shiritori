@@ -12,7 +12,7 @@ http://aws-shiritori.tk/
 - aws-shiritori.tk　
 - 取得完了 2021/6/21 
 
-# route53 回り参考
+# route53 まわり参考
 - https://blog.serverworks.co.jp/delegate-route53
 - route53 ホストゾーン作成
 - ドメインの管理者をfreenomから、route53のNSレコードに記載されたDNSサーバに変更
